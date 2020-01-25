@@ -27,7 +27,13 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: Client-side routing is beneficial for several reasons.
+1) It allows us to implement routing behavior without sending request to
+   a server.
+2)  It provides a browser-only interaction allowing developers to make
+    GET/POST request without worry of latency or bandwidth.
+3)  It enables the ability to navigate a Single-page-application without
+    hassle of page reloads.
 
 ## Project Set Up
 
