@@ -10,7 +10,7 @@ export default function SearchForm({handleSearch, search}) {
                 type="text"
                 onChange={handleSearch}
                 value={search}
-                placeholder="Search Characters...."
+                placeholder="Search"
 
             />
         </form>
