@@ -1,29 +1,45 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import CharacterCard from "./CharacterCard";
+import SearchForm from "./SearchForm";
 
 
 export default function CharacterList() {
-  // TODO: Add useState to track data from useEffect
-  const [characters, setCharacters] = useState([]);
+    // TODO: Add useState to track data from useEffect
+    const [characters, setCharacters] = useState([]);
+    const [search, setSearch] = useState('');
 
-  useEffect(() => {
-    // TODO: Add API Request here - must run in `useEffect`
-    axios.get('https://rick-api.herokuapp.com/api/')
-        .then(res => {
-          setCharacters(res.data.results);
-          console.log(res.data.results)
+    useEffect(() => {
 
-        })
-        .catch(err => console.log(err.message))
+        axios.get('https://rickandmortyapi.com/api/character/')
+            .then((res) => {
+                setCharacters(res.data.results);
+                console.log('data', res.data.results)
 
-    //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
-  }, []);
+            })
+            .catch(err => console.log(err.message))
 
-  return (
-    <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
-    </section>
-  );
+        //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
+    }, []);
+
+    console.log('inside CharacterList');
+    const handleSearch = event => setSearch(event.target.value);
+    return (
+        <section className="character-list">
+            <h2>Characters: </h2>
+            <SearchForm handleSearch={handleSearch}/>
+            <div>
+                {
+                   characters && characters.map(character => {
+                        return <Link to={`/character/${character.id}`}>
+
+                            <CharacterCard character={character} />
+                        </Link>
+
+                    })
+                }
+            </div>
+        </section>
+    );
 }

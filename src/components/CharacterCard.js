@@ -12,6 +12,7 @@ const CardWrapper = styled.div`
 
 const CardImg = styled.img`
   margin: 2%;
+  width: 300px;
 `;
 
 const CardInfo = styled.div`
@@ -37,6 +38,10 @@ export default function CharacterCard({character, detail}) {
                  <CardInfo>
                   <span>Status: </span>
                   <h3>{character.status}</h3>
+                 </CardInfo>
+                 <CardInfo>
+                     <span>Location: </span>
+                     <h3>{character.location.name} && {character.location}</h3>
                  </CardInfo>
               </>
           ) : null}

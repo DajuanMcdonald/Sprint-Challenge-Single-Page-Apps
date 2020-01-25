@@ -5,6 +5,7 @@ import CharacterList from "./components/CharacterList";
 import WelcomePage from "./components/WelcomePage";
 
 
+
 export default function App() {
     return (
         <main>
@@ -17,6 +18,10 @@ export default function App() {
             <Route path='/characters'>
 
                 <CharacterList/>
+            </Route>
+
+            <Route>
+
             </Route>
         </main>
 
