@@ -28,14 +28,18 @@ export default function CharacterList() {
     return (
         <section className="character-list">
             <h2>Characters: </h2>
-            <SearchForm handleSearch={handleSearch}/>
+            <SearchForm handleSearch={handleSearch} search={search}/>
             <div>
                 {
                    characters && characters.map(character => {
-                        return <Link to={`/character/${character.id}`}>
+                        return character.name.toLowerCase().includes(search.toLowerCase()) ? (
+
+
+                       <Link to={`/character/${character.id}`}>
 
                             <CharacterCard character={character} />
                         </Link>
+                            ) :  null;
 
                     })
                 }

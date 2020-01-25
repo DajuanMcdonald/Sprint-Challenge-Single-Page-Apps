@@ -10,6 +10,8 @@ const CardWrapper = styled.div`
   margin: 5%;
   overflow: hidden;
   text-decoration: none;
+  background-color: lightslategray;
+  width: 200px;
 `;
 
 const CardImg = styled.img`
@@ -20,6 +22,7 @@ const CardImg = styled.img`
 
 const CardInfo = styled.div`
 margin: 2%;
+text-decoration: none;
 `;
 
 
@@ -29,12 +32,18 @@ export default function CharacterCard({character}) {
       <CardWrapper>
         <CardImg src={character.image} alt={character.name}/>
         <CardInfo>
-            <h3>{character.name}</h3>
+            <h3>Name:</h3>
+            <p>{character.name}</p>
 
         </CardInfo>
         <CardInfo>
+            <h3>Gender:</h3>
+            <p>{character.gender}</p>
+        </CardInfo>
 
-            <h3>{character.gender}</h3>
+        <CardInfo>
+            <h3>Species:</h3>
+            <p>{character.species}</p>
         </CardInfo>
 
       </CardWrapper>

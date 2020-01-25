@@ -11,6 +11,7 @@ export default function SearchForm({handleSearch, search}) {
                 onChange={handleSearch}
                 value={search}
                 placeholder="Search Characters...."
+
             />
         </form>
     </section>
