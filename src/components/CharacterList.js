@@ -15,7 +15,7 @@ export default function CharacterList() {
         axios.get('https://rickandmortyapi.com/api/character/')
             .then((res) => {
                 setCharacters(res.data.results);
-                console.log('data', res.data.results)
+
 
             })
             .catch(err => console.log(err.message))
@@ -23,7 +23,7 @@ export default function CharacterList() {
         //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
     }, []);
 
-    console.log('inside CharacterList');
+
     const handleSearch = event => setSearch(event.target.value);
     return (
         <section className="character-list">

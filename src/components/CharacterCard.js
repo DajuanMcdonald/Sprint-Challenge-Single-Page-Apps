@@ -11,12 +11,12 @@ const CardWrapper = styled.div`
   overflow: hidden;
   text-decoration: none;
   background-color: lightslategray;
-  width: 200px;
+  width: 500px;
 `;
 
 const CardImg = styled.img`
   margin: 2%;
-  width: 300px;
+  width: 200px;
   border: 1px solid darkblue;
 `;
 
