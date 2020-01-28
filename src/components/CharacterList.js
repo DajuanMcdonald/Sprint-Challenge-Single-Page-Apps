@@ -20,7 +20,7 @@ export default function CharacterList() {
             })
             .catch(err => console.log(err.message))
 
-        //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
+        //  Important: verify the 2nd `useEffect` parameter: the dependencies array!
     }, []);
 
 
@@ -32,7 +32,7 @@ export default function CharacterList() {
             <div>
                 {
                    characters && characters.map(character => {
-                        return character.name.toLowerCase().includes(search.toLowerCase()) ? (
+                        return character.name.toLowerCase().includes(search.toString()) ? (
 
 
                        <Link to={`/character/${character.id}`}>
